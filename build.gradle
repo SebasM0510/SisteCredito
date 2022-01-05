@@ -1,0 +1,39 @@
+group 'org.example'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+    jcenter()
+}
+
+buildscript {
+    repositories {
+        maven {
+            url "https://plugins.gradle.org/m2/"
+        }
+        //mavenLocal()
+        //jcenter()
+    }
+    dependencies {
+        classpath("net.serenity-bdd:serenity-gradle-plugin:2.5.5")
+    }
+}
+
+apply plugin: 'java'
+
+apply plugin: 'net.serenity-bdd.aggregator'
+
+
+dependencies {
+    implementation group: 'net.serenity-bdd', name: 'serenity-screenplay', version: '3.0.5'
+    implementation group: 'net.serenity-bdd', name: 'serenity-screenplay-webdriver', version: '3.0.5'
+    implementation group: 'net.serenity-bdd', name: 'serenity-core', version: '3.0.5'
+    implementation group: 'net.serenity-bdd', name: 'serenity-cucumber', version: '3.0.5'
+    implementation group: 'io.cucumber', name: 'cucumber-java', version: '6.9.1'
+    implementation group: 'net.serenity-bdd', name: 'serenity-junit', version: '3.0.5'
+    implementation 'junit:junit:4.13.1'
+}
+
+
+
+
